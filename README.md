@@ -1,3 +1,1 @@
-# M-322
-
-## Benutzerschnittstellen implementieren
+# M-322 - Benutzerschnittstellen implementieren
