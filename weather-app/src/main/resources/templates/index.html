@@ -1,28 +1,49 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Login</title>
-    <link rel="stylesheet" th:href="@{/css/main.css}"/>
-    <link rel="icon" th:href="@{/assets/rain-tab.png}"/>
-</head>
-<body>
-
-<main>
-    <div id="app" class="app">
+    <link
+      rel="stylesheet"
+      th:href="@{/scss/main.css}"
+      href="../static/scss/main.css"
+    />
+    <link rel="icon" th:href="@{/assets/rain-tab.png}" />
+  </head>
+  <body>
+    <main>
+      <div id="app" class="app">
         <div class="app-container">
-            <form action="">
-                <h3 class="form-item">Select your location</h3>
-                <input type="text" name="" class="search input form-item" th:placeholder="Search">
-                <button type="submit" th:value="Enter" class="submit input form-item"></button>
-            </form>
-
+          <form action="">
+            <h3 class="form-item">Select your location</h3>
+            <div class="input-container">
+              <input
+                type="text"
+                name=""
+                class="search input form-item"
+                th:placeholder="Search"
+                placeholder="Search"
+              />
+              <input
+                type="submit"
+                th:value="Enter"
+                value="Enter"
+                class="submit input form-item"
+              ></input>
+            </div>
+          </form>
         </div>
-    </div>
-</main>
+      </div>
+    </main>
 
-<script type="text/javascript" th:src="@{/js/main.js}"></script>
-
-</body>
+    <script
+      type="text/javascript"
+      th:src="@{/js/main.js}"
+      src="../static/js/main.js"
+    ></script>
+  </body>
 </html>
