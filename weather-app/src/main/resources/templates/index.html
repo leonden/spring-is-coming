@@ -3,29 +3,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login-Page</title>
+    <title>Login</title>
     <link rel="stylesheet" th:href="@{/css/main.css}"/>
     <link rel="icon" th:href="@{/assets/rain-tab.png}"/>
 </head>
 <body>
 
-    <main>
-        <div id="app" class="app">
-            <div class="app-container">
-                <h3></h3>
-                <form action="">
-                    <h3>Select your location</h3>
-                    <input type="text" name="" id="" class="search">
-                    <button type="submit"></button>
-                </form>
-                <a th:href="@{home}">Home</a>
-                <a th:href="@{forecast}">Forecast</a>
-                <a th:href="@{weather}">Weather</a>
-            </div>
-        </div>
-    </main>
+<main>
+    <div id="app" class="app">
+        <div class="app-container">
+            <form action="">
+                <h3 class="form-item">Select your location</h3>
+                <input type="text" name="" class="search input form-item" th:placeholder="Search">
+                <button type="submit" th:value="Enter" class="submit input form-item"></button>
+            </form>
 
-    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
 
 </body>
 </html>
