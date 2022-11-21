@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login-Page</title>
     <link rel="stylesheet" th:href="@{/css/main.css}"/>
-    <link rel="icon" href="/assets/rain-tab.png"/>
+    <link rel="icon" th:href="@{/assets/rain-tab.png}"/>
 </head>
 <body>
-    <nav>
-    </nav>
+
     <main>
         <div id="app" class="app">
             <div class="app-container">
                 <h3></h3>
                 <form action="">
-                    <input type="text" name="" id="">
+                    <h3>Select your location</h3>
+                    <input type="text" name="" id="" class="search">
                     <button type="submit"></button>
                 </form>
+                <a th:href="@{home}">Home</a>
+                <a th:href="@{forecast}">Forecast</a>
+                <a th:href="@{weather}">Weather</a>
             </div>
         </div>
     </main>
 
     <script type="text/javascript" th:src="@{/js/main.js}"></script>
-    <footer>
-    </footer>
+
 </body>
 </html>
