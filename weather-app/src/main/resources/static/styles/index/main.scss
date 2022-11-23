@@ -18,23 +18,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.app-container form {
-  padding: 25px 0;
-  width: 100%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.app-container h3 {
-  font-weight: 400;
-  font-size: 1.5em;
-  padding-left: 20px;
+  form {
+    padding: 25px 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 1.5em;
+    padding-left: 20px;
+  }
 }
 
 .input-container {
-  width: 80%;
+  width: 100%;
 }
 
 .form-item {
@@ -45,7 +45,7 @@
   border-radius: 40px;
   outline: none;
   border: none;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
 }
 
 .search {
@@ -64,10 +64,10 @@
   background: white;
   transition: 0.25s;
   cursor: pointer;
-}
-.submit:hover {
-  background: #eaeaea;
-  transition: 0.25s;
+  &:hover {
+    background: #eaeaea;
+    transition: 0.25s;
+  }
 }
 
 @media (min-width: 576px) {
@@ -75,17 +75,28 @@
     padding: 0 10%;
   }
 }
+
 @media (min-width: 768px) {
   .app {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .app .app-container {
-    padding: 0 5%;
-    max-width: 700px;
-    max-height: 800px;
-    border-radius: 40px;
+    .app-container {
+      padding: 0 5%;
+      max-width: 700px;
+      max-height: 800px;
+      border-radius: 40px;
+      form {
+        h3 {
+          padding-left: 80px;
+        }
+      }
+    }
+    .input-container {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 }
-/* INDEX *//*# sourceMappingURL=main.css.map */
+
+/* INDEX */

@@ -6,13 +6,24 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Login</title>
+    <title>Search</title>
     <link
       rel="stylesheet"
-      th:href="@{/scss/main.css}"
-      href="../static/scss/main.css"
+      th:href="@{/styles/index/main.css}"
+      href="../static/styles/index/main.css"
     />
-    <link rel="icon" th:href="@{/assets/rain-tab.png}" />
+    <link
+      rel="icon"
+      th:href="@{/assets/rain-tab-light.png}"
+      href="../static/assets/rain-tab-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      th:href="@{/assets/rain-tab-dark.png}"
+      href="../static/assets/rain-tab-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
   </head>
   <body>
     <main>
@@ -28,12 +39,10 @@
                 th:placeholder="Search"
                 placeholder="Search"
               />
-              <input
-                type="submit"
-                th:value="Enter"
-                value="Enter"
-                class="submit input form-item"
-              ></input>
+
+              <button type="submit" class="submit input form-item">
+                <a th:href="weather" href="weather.html">Submit</a>
+              </button>
             </div>
           </form>
         </div>

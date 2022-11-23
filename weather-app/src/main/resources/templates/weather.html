@@ -1,21 +1,48 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Weather</title>
-    <link rel="stylesheet" th:href="@{/css/main.css}"/>
-    <link rel="icon" th:href="@{/assets/rain-tab.png}"/>
-</head>
-<body>
-<main>
-    <div id="app" class="app">
+    <link
+      rel="stylesheet"
+      th:href="@{/styles/index/main.css}"
+      href="../static/styles/index/main.css"
+    />
+    <link
+      rel="icon"
+      th:href="@{/assets/rain-tab-light.png}"
+      href="../static/assets/rain-tab-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      th:href="@{/assets/rain-tab-dark.png}"
+      href="../static/assets/rain-tab-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+  </head>
+  <body>
+    <main>
+      <div id="app" class="app">
         <div class="app-container">
-            <h1>Weather</h1>
+          <div class="button-container">
+            <a th:href="home" href="index.html"> <button>Back</button></a>
+            <a th:href="weather" href="weather.html"
+              ><button>Forecast</button></a
+            >
+          </div>
         </div>
-    </div>
-</main>
+      </div>
+    </main>
 
-<script type="text/javascript" th:src="@{/js/main.js}"></script>
-</body>
+    <script
+      type="text/javascript"
+      th:src="@{/js/main.js}"
+      src="../static/js/main.js"
+    ></script>
+  </body>
 </html>
