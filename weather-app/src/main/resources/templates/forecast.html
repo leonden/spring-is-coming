@@ -9,8 +9,13 @@
     <title>Forecast</title>
     <link
       rel="stylesheet"
-      th:href="@{/styles/index/main.css}"
+      th:href="@{/styles/forecast/forecast.css}"
       href="../static/styles/index/main.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/styles/global.css}"
+      href="../static/styles/global.css"
     />
     <link
       rel="icon"
@@ -30,7 +35,9 @@
       <div id="app" class="app">
         <div class="app-container">
           <div class="button-container">
-            <a th:href="weather" href="weather.html"><button>Back</button></a>
+            <a th:href="weather" href="weather.html"
+              ><button class="button input">Back</button></a
+            >
           </div>
         </div>
       </div>

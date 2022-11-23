@@ -13,6 +13,11 @@
       href="../static/styles/index/main.css"
     />
     <link
+      rel="stylesheet"
+      th:href="@{/styles/global.css}"
+      href="../static/styles/global.css"
+    />
+    <link
       rel="icon"
       th:href="@{/assets/rain-tab-light.png}"
       href="../static/assets/rain-tab-light.png"
@@ -40,7 +45,7 @@
                 placeholder="Search"
               />
 
-              <button type="submit" class="submit input form-item">
+              <button type="submit" class="submit input form-item button">
                 <a th:href="weather" href="weather.html">Submit</a>
               </button>
             </div>
