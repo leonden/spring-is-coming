@@ -10,7 +10,7 @@
     <link
       rel="stylesheet"
       th:href="@{/styles/weather/weather.css}"
-      href="../static/styles/index/main.css"
+      href="../static/styles/weather/weather.css"
     />
     <link
       rel="stylesheet"
@@ -41,6 +41,23 @@
             <a th:href="forecast" href="forecast.html">
               <button class="button input">Forecast</button>
             </a>
+          </div>
+          <div class="weather"></div>
+          <div class="general-information">
+            <div class="info-item">
+              <h3>10&#176;C</h3>
+              <h4>Feels like</h4>
+            </div>
+            <div class="separator"></div>
+            <div class="info-item">
+              <h3>10%</h3>
+              <h4>Humidity</h4>
+            </div>
+            <div class="separator"></div>
+            <div class="info-item">
+              <h3>10km/h</h3>
+              <h4>Wind speed</h4>
+            </div>
           </div>
         </div>
       </div>
