@@ -14,7 +14,7 @@
   padding: 20px;
   width: 100%;
   height: 100vh;
-  background-color: #eef2ff;
+  background: linear-gradient(0deg, #eeedff 0%, #aec1ff 50%, #787aff 100%);
   display: flex;
   flex-direction: column;
 }
@@ -38,11 +38,23 @@
   height: 40px;
   background: white;
   transition: 0.25s;
+  overflow: hidden;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
   &:hover {
     background: #eaeaea;
     transition: 0.25s;
   }
+}
+
+.not-selectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 @media (min-width: 576px) {

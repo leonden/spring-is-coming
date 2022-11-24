@@ -36,26 +36,44 @@
         <div class="app-container">
           <div class="button-container">
             <a th:href="home" href="index.html">
-              <button class="button input">Back</button>
+              <button class="button input btn-back">Back</button>
             </a>
             <a th:href="forecast" href="forecast.html">
-              <button class="button input">Forecast</button>
+              <button class="button input btn-forward">Forecast</button>
             </a>
           </div>
-          <div class="weather"></div>
-          <div class="general-information">
+          <div class="main-info">
+            <div class="location" id="data-location">
+              <img
+                class="not-selectable"
+                th:src="@{/assets/marker.png}"
+                src="../static/assets/marker.png"
+                alt="Location marker"
+              />
+              <h4>Basel</h4>
+            </div>
+            <div class="weather-info">
+              <div class="temperature not-selectable" id="data-temperature">
+                <h1>15&#176;C</h1>
+              </div>
+              <div class="sky not-selectable" id="data-sky">
+                <h4>sunny</h4>
+              </div>
+            </div>
+          </div>
+          <div class="general-info">
             <div class="info-item">
-              <h3>10&#176;C</h3>
+              <h3 id="data-feels-like">10&#176;C</h3>
               <h4>Feels like</h4>
             </div>
             <div class="separator"></div>
             <div class="info-item">
-              <h3>10%</h3>
+              <h3 id="data-humidity">10%</h3>
               <h4>Humidity</h4>
             </div>
             <div class="separator"></div>
             <div class="info-item">
-              <h3>10km/h</h3>
+              <h3 id="data-wind-speed">10km/h</h3>
               <h4>Wind speed</h4>
             </div>
           </div>
