@@ -1,4 +1,5 @@
 .app-container {
+  justify-content: center;
   form {
     padding: 25px 0;
     width: 100%;
@@ -30,6 +31,8 @@
 }
 
 .submit {
+  min-width: 120px;
+  max-width: 160px;
   float: right;
   width: 50%;
 }
