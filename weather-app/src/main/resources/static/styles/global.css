@@ -61,9 +61,6 @@
 }
 
 @media (min-width: 576px) {
-  .app-container {
-    padding: 0 10% 40px 10%;
-  }
   .app-container .button-container {
     padding: 40px 0;
   }
