@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
   searchInput.addEventListener("keyup", (e) => {
     let searchInputValue = searchInput.value;
     document.getElementById("matches").innerHTML = "";
+    searchInput.style.borderRadius = "40px";
 
     if (searchInputValue.length >= 3) {
       callGeocoder(searchInputValue);
@@ -18,12 +19,25 @@ function callGeocoder(searchInputValue) {
 
   ajaxRequest.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
+      const searchInput = document.querySelector(".search");
+      searchInput.style.borderRadius = "20px 20px 0 0";
+
       let responseJson = JSON.parse(this.responseText);
       document.getElementById("matches").innerHTML = "";
 
-      responseJson.forEach((locationItem) => {
-        createMatches(locationItem.name, locationItem.lat, locationItem.lon);
-      });
+      if (responseJson.length != 0) {
+        responseJson.forEach((locationItem) => {
+          createMatches(
+            locationItem.name,
+            locationItem.state,
+            locationItem.country,
+            locationItem.lat,
+            locationItem.lon
+          );
+        });
+      } else {
+        searchInput.style.borderRadius = "40px";
+      }
     }
   };
   ajaxRequest.open(
@@ -34,20 +48,14 @@ function callGeocoder(searchInputValue) {
   ajaxRequest.send();
 }
 
-function createMatches(matchText, latitude, longitude, linkToPage) {
+function createMatches(matchText, state, country, latitude, longitude) {
   let url = `${WEATHER_URL}?city=${matchText}&lat=${latitude}&lon=${longitude}`;
-  // Creates object with a tag name
   let tag = document.createElement("a");
-  // Creates the text (content)
-  let text = document.createTextNode(matchText);
-  // Creates the attribute
+  let text = document.createTextNode(`${matchText}, ${state} ${country}`);
   let href = document.createAttribute("href");
   href.value = url;
-  // Adds content to the tag
   tag.appendChild(text);
-  // Adds attribute to the tag
   tag.setAttributeNode(href);
-  // Adds tag to the parentTag
   let element = document.getElementById("matches");
   element.appendChild(tag);
 }
