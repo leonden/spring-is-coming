@@ -43,37 +43,37 @@
             </a>
           </div>
           <div class="main-info">
-            <div class="location" id="data-location">
+            <div class="location">
               <img
                 class="not-selectable"
                 th:src="@{/assets/marker.png}"
                 src="../static/assets/marker.png"
                 alt="Location marker"
               />
-              <h4>Basel</h4>
+              <h4 id="data-location">Basel</h4>
             </div>
             <div class="weather-info">
-              <div class="temperature not-selectable" id="data-temperature">
-                <h1>15&#176;C</h1>
+              <div class="temperature not-selectable">
+                <h1 id="data-temperature">15&#176;C</h1>
               </div>
-              <div class="sky not-selectable" id="data-sky">
-                <h4>sunny</h4>
+              <div class="sky not-selectable">
+                <h4 id="data-sky">sunny</h4>
               </div>
             </div>
           </div>
           <div class="general-info">
             <div class="info-item">
-              <h3 id="data-feels-like">10&#176;C</h3>
+              <h3 id="data-feels-like">&#176;C</h3>
               <h4>Feels like</h4>
             </div>
             <div class="separator"></div>
             <div class="info-item">
-              <h3 id="data-humidity">10%</h3>
+              <h3 id="data-humidity">%</h3>
               <h4>Humidity</h4>
             </div>
             <div class="separator"></div>
             <div class="info-item">
-              <h3 id="data-wind-speed">10km/h</h3>
+              <h3 id="data-wind-speed">km/h</h3>
               <h4>Wind speed</h4>
             </div>
           </div>
@@ -81,12 +81,10 @@
       </div>
     </main>
 
-
-
     <script
       type="text/javascript"
-      th:src="@{/js/main.js}"
-      src="../static/js/main.js"
+      th:src="@{/js/weather.js}"
+      src="../static/js/weather.js"
     ></script>
   </body>
 </html>
