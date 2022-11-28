@@ -55,11 +55,6 @@
   justify-content: space-evenly;
   align-items: center;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
-  .separator {
-    width: 1px;
-    height: 70%;
-    background-color: rgba(112, 112, 112, 0.5);
-  }
   .info-item {
     display: flex;
     flex-direction: column;

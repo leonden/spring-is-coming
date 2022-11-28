@@ -54,11 +54,6 @@
   align-items: center;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
 }
-.general-info .separator {
-  width: 1px;
-  height: 70%;
-  background-color: rgba(112, 112, 112, 0.5);
-}
 .general-info .info-item {
   display: flex;
   flex-direction: column;
