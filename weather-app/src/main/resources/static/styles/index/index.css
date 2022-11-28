@@ -47,7 +47,6 @@
 }
 #matches a:hover {
   text-decoration: underline;
-  transition: 0.25s;
 }
 
 .search {
