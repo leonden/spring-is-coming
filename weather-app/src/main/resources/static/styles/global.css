@@ -53,6 +53,12 @@
   transition: 0.25s;
 }
 
+.separator {
+  width: 1px;
+  height: 70%;
+  background-color: rgba(112, 112, 112, 0.5);
+}
+
 .not-selectable {
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
