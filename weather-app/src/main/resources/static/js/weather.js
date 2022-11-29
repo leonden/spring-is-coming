@@ -25,7 +25,6 @@ function callOpenweathermap(latitude, longitude) {
   ajaxRequest.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       let responseJson = JSON.parse(this.responseText);
-      console.log(responseJson);
 
       const location = document.querySelector("#data-location");
       const temperature = document.querySelector("#data-temperature");
