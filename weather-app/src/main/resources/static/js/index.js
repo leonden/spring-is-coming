@@ -26,6 +26,8 @@ function callGeocoder(searchInputValue) {
       document.getElementById("matches").innerHTML = "";
 
       if (responseJson.length != 0) {
+        searchInput.style.borderRadius = "20px 20px 0 0";
+
         responseJson.forEach((locationItem) => {
           createMatches(
             locationItem.name,
