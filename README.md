@@ -2,4 +2,4 @@
 
 - I use the Openweathermap API to get the necessary weather data for the given location.
 - TimezoneDB API is also used for certain functionalities
-- The application technology is provided by the Springboot Framework for Java Applications
+- The technology of the application is provided by the Springboot Framework for Java Applications
