@@ -40,6 +40,8 @@ function callGeocoder(searchInputValue) {
       } else {
         searchInput.style.borderRadius = "40px";
       }
+    } else {
+      console.error("error calling geocoder api");
     }
   };
   ajaxRequest.open(
