@@ -26,6 +26,7 @@ function callOpenweathermap(latitude, longitude) {
     if (this.readyState == 4 && this.status == 200) {
       let responseJson = JSON.parse(this.responseText);
 
+      // get all the necessary elements from the DOM
       const location = document.querySelector("#data-location");
       const temperature = document.querySelector("#data-temperature");
       const sky = document.querySelector("#data-sky");
@@ -33,6 +34,7 @@ function callOpenweathermap(latitude, longitude) {
       const humidity = document.querySelector("#data-humidity");
       const windSpeed = document.querySelector("#data-wind-speed");
 
+      // set the values of the elements
       location.innerHTML = responseJson.name;
       temperature.innerHTML = Math.round(responseJson.main.temp) + "&#176;C";
       sky.innerHTML = responseJson.weather[0].main;
