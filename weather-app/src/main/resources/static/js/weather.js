@@ -1,17 +1,19 @@
+const WEATHER_URL = "/src/main/resources/templates/forecast.html";
+
 window.addEventListener("DOMContentLoaded", (e) => {
   getParameterValues();
-  // TODO set name
-  // TODO make ajax call against the openweather API
 });
 
 function getParameterValues() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
 
+  const city = urlParams.get("city");
   const latitude = urlParams.get("lat");
   const longitude = urlParams.get("lon");
 
   callOpenweathermap(latitude, longitude);
+  createLinkToForecast(city, latitude, longitude);
 
   // urlParams.forEach((parameterValue) => {
   //   urlParams.get(parameterValue);
@@ -50,4 +52,12 @@ function callOpenweathermap(latitude, longitude) {
     true
   );
   ajaxRequest.send();
+}
+
+function createLinkToForecast(city, latitude, longitude) {
+  const forecastLink = document.querySelector("#btn-forecast");
+  let url = `${WEATHER_URL}?city=${city}&lat=${latitude}&lon=${longitude}`;
+  let href = document.createAttribute("href");
+  href.value = url;
+  forecastLink.setAttributeNode(href);
 }
