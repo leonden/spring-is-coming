@@ -35,7 +35,7 @@
       <div id="app" class="app">
         <div class="app-container">
           <div class="button-container">
-            <a th:href="weather" href="weather.html"
+            <a id="btn-weather" th:href="weather"
               ><button class="button input">Back</button></a
             >
           </div>
@@ -69,6 +69,11 @@
       </div>
     </main>
 
+    <script
+      type="text/javascript"
+      th:src="@{/js/forecast.js}"
+      src="../static/js/forecast.js"
+    ></script>
     <script
       type="text/javascript"
       th:src="@{/js/global.js}"
