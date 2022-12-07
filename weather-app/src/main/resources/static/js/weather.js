@@ -1,7 +1,5 @@
 window.addEventListener("DOMContentLoaded", (e) => {
   getParameterValues();
-  // TODO set name
-  // TODO make ajax call against the openweather API
 });
 
 function getParameterValues() {
@@ -20,12 +18,17 @@ function getParameterValues() {
 }
 
 function callOpenweathermap(latitude, longitude) {
-  const ajaxRequest = new XMLHttpRequest();
-
-  ajaxRequest.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let responseJson = JSON.parse(this.responseText);
-
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=1688017c7157a368a1d6a854d3a9ce02`
+  )
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error("error calling api");
+      }
+    })
+    .then((data) => {
       // get all the necessary elements from the DOM
       const location = document.querySelector("#data-location");
       const temperature = document.querySelector("#data-temperature");
@@ -35,19 +38,11 @@ function callOpenweathermap(latitude, longitude) {
       const windSpeed = document.querySelector("#data-wind-speed");
 
       // set the values of the elements
-      location.innerHTML = responseJson.name;
-      temperature.innerHTML = Math.round(responseJson.main.temp) + "&#176;C";
-      sky.innerHTML = responseJson.weather[0].main;
-      feelsLike.innerHTML =
-        Math.round(responseJson.main.feels_like) + "&#176;C";
-      humidity.innerHTML = responseJson.main.humidity + "%";
-      windSpeed.innerHTML = Math.round(responseJson.wind.speed) + "km/h";
-    }
-  };
-  ajaxRequest.open(
-    "GET",
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=1688017c7157a368a1d6a854d3a9ce02`,
-    true
-  );
-  ajaxRequest.send();
+      location.innerHTML = data.name;
+      temperature.innerHTML = Math.round(data.main.temp) + "&#176;C";
+      sky.innerHTML = data.weather[0].main;
+      feelsLike.innerHTML = Math.round(data.main.feels_like) + "&#176;C";
+      humidity.innerHTML = data.main.humidity + "%";
+      windSpeed.innerHTML = Math.round(data.wind.speed) + "km/h";
+    });
 }
