@@ -8,26 +8,24 @@ window.addEventListener("DOMContentLoaded", (e) => {
 });
 
 function callTimeZoneDatabase(latitude, longitude) {
-  const ajaxRequest = new XMLHttpRequest();
-
-  ajaxRequest.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let responseJson = JSON.parse(this.responseText);
-
-      handleTime(responseJson);
-    }
-  };
-  ajaxRequest.open(
-    "GET",
-    `http://api.timezonedb.com/v2.1/get-time-zone?key=7ZM03JHT7YH5&by=position&lat=${latitude}&lng=${longitude}&format=json`,
-    true
-  );
-  ajaxRequest.send();
+  fetch(
+    `http://api.timezonedb.com/v2.1/get-time-zone?key=7ZM03JHT7YH5&by=position&lat=${latitude}&lng=${longitude}&format=json`
+  )
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error("error calling api");
+      }
+    })
+    .then((data) => {
+      handleTime(data);
+    });
 }
 
-function handleTime(responseJson) {
-  // const localDate = responseJson.formatted.substr(0, 10);
-  const localTime = responseJson.formatted.substr(11, 18).replaceAll(":", "");
+function handleTime(data) {
+  // const localDate = data.formatted.substr(0, 10);
+  const localTime = data.formatted.substr(11, 18).replaceAll(":", "");
   const localTimeFormatted = parseInt(localTime);
 
   console.log(localTimeFormatted);
