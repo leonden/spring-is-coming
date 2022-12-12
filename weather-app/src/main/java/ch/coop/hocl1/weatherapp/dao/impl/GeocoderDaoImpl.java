@@ -38,8 +38,8 @@ public class GeocoderDaoImpl implements GeocoderDao {
 
         // TODO you can switch to any HttpClient annotation that you want
         HttpClient nettyHttpClient = HttpClient.create()
-                .responseTimeout(Duration.ofSeconds(3))
-                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 3000);
+                .responseTimeout(Duration.ofSeconds(1))
+                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 1000);
 
         this.webClient = WebClient.builder()
                 .clientConnector(new ReactorClientHttpConnector(nettyHttpClient))
