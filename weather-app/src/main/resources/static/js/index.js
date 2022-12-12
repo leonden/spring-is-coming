@@ -24,7 +24,7 @@ function callGeocoder(searchInputValue) {
       if (response.ok) {
         return response.json();
       } else {
-        console.error("error calling api");
+        console.error("Error calling API");
       }
     })
     .then((data) => {
