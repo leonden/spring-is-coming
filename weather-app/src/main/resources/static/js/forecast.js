@@ -14,16 +14,11 @@ function getParameterValues() {
 
   callOpenweathermapForecast(latitude, longitude);
   createLinkToWeather(city, latitude, longitude);
-
-  // urlParams.forEach((parameterValue) => {
-  //   urlParams.get(parameterValue);
-  //   console.log(parameterValue);
-  // });
 }
 
 function callOpenweathermapForecast(latitude, longitude) {
   fetch(
-    `api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=1688017c7157a368a1d6a854d3a9ce02`
+    `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=1688017c7157a368a1d6a854d3a9ce02`
   )
     .then((response) => {
       if (response.ok) {
@@ -32,7 +27,7 @@ function callOpenweathermapForecast(latitude, longitude) {
         console.error("error calling api");
       }
     })
-    .then((data) => {});
+    .then((data) => console.log(data));
 }
 
 function createLinkToWeather(city, latitude, longitude) {
