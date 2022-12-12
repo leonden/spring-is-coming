@@ -15,7 +15,7 @@ function callTimeZoneDatabase(latitude, longitude) {
       if (response.ok) {
         return response.json();
       } else {
-        console.error("error calling api");
+        console.error("Error calling API");
       }
     })
     .then((data) => {
@@ -27,8 +27,6 @@ function handleTime(data) {
   // const localDate = data.formatted.substr(0, 10);
   const localTime = data.formatted.substr(11, 18).replaceAll(":", "");
   const localTimeFormatted = parseInt(localTime);
-
-  console.log(localTimeFormatted);
 
   setBackground(localTimeFormatted);
 }
