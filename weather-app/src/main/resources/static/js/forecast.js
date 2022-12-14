@@ -24,7 +24,7 @@ function callOpenweathermapForecast(city, latitude, longitude) {
       if (response.ok) {
         return response.json();
       } else {
-        console.error("error calling api");
+        console.error("Error calling API");
       }
     })
     .then((data) => {
@@ -43,9 +43,14 @@ function handleDom(city, data) {
   const forecastDayArray = [dayOne, dayTwo, dayThree, dayFour, dayFive];
 
   let responseArray = data.list;
-  let forecastDayJson = handleForecastResponse(responseArray);
+  let forecastJson = handleForecastResponse(responseArray);
 
   title.innerHTML = `The next four days in ${city}`;
+
+  for (let i = 0; i < forecastJson.length; i++) {
+    forecastDayArray[i].innerHTML =
+      Math.round(forecastJson[i].main.temp) + "&#176;C";
+  }
 }
 
 function handleForecastResponse(responseArray) {
