@@ -29,7 +29,7 @@ function callOpenweathermap(latitude, longitude) {
       if (response.ok) {
         return response.json();
       } else {
-        console.error("error calling api");
+        console.error("Error calling API");
       }
     })
     .then((data) => {
