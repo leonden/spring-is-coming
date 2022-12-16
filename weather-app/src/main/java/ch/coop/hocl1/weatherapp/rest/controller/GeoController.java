@@ -21,7 +21,7 @@ public class GeoController {
     @RequestMapping(
             method = RequestMethod.GET,
             value = "/search/location",
-            produces = { "application/json", "text/html"}
+            produces = {"application/json", "text/html"}
     )
     public ResponseEntity<List<GeoLocation>> readLocation(String query) {
         System.out.println("Hello " + query);
@@ -30,6 +30,6 @@ public class GeoController {
 
         return new ResponseEntity<>(searchResult, HttpStatus.OK);
     }
-
-
 }
+
+
