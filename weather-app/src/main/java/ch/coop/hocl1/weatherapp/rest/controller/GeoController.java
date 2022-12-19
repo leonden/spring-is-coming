@@ -24,8 +24,6 @@ public class GeoController {
             produces = {"application/json", "text/html"}
     )
     public ResponseEntity<List<GeoLocation>> readLocation(String query) {
-        System.out.println("Hello " + query);
-
         List<GeoLocation> searchResult = geocoderDao.readGeoLocation(query);
 
         return new ResponseEntity<>(searchResult, HttpStatus.OK);

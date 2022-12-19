@@ -42,9 +42,6 @@ public class OpenWeatherController {
             produces = { "application/json", "text/html"}
     )
     public ResponseEntity<List<GeoLocation>> readCurrentWeather(String query) {
-        System.out.println("Hello " + query);
-
-
         //List<ForecastModel> searchResult = openWeatherDao.readGeoLocation(query);
 
         return new ResponseEntity<>(Collections.EMPTY_LIST, HttpStatus.OK);
