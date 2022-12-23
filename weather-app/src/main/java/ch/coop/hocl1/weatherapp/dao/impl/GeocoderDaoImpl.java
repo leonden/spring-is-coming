@@ -36,7 +36,6 @@ public class GeocoderDaoImpl implements GeocoderDao {
 
         String baseUrl = environment.getProperty("geocoder.base.url");
 
-        // TODO you can switch to any HttpClient annotation that you want
         HttpClient nettyHttpClient = HttpClient.create()
                 .responseTimeout(Duration.ofSeconds(1))
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 1000);

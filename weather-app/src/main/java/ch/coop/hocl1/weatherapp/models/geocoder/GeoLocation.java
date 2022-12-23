@@ -15,6 +15,4 @@ public class GeoLocation {
     private String country;
     private String state;
 
-
-
 }
