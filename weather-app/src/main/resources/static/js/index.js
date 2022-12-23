@@ -18,20 +18,31 @@ function callGeocoder(searchInputValue) {
   const searchInput = document.querySelector(".search");
 
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${searchInputValue}&limit=3&appid=1688017c7157a368a1d6a854d3a9ce02`
+    `http://localhost:8080/api/v1/geo/search/location?query=${searchInputValue}`
   )
     .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        console.error("Error calling API");
+        console.error("Error calling API:" + response.body);
       }
     })
     .then((data) => {
       if (data.length != 0) {
+        // data.length === 3
         searchInput.style.borderRadius = "20px 20px 0 0";
 
-        data.forEach((locationItem) => {
+        const filteredData = data.filter((location) => {
+          return (
+            location.state !== null &&
+            location.state !== undefined &&
+            location.country !== "NO"
+          );
+        });
+
+        console.log(temp);
+
+        filteredData.forEach((locationItem) => {
           createMatches(
             locationItem.name,
             locationItem.state,
@@ -52,8 +63,8 @@ function createMatches(matchText, state, country, latitude, longitude) {
   let text = document.createTextNode(`${matchText}, ${state} ${country}`);
   let href = document.createAttribute("href");
   href.value = url;
-  tag.appendChild(text);
   tag.setAttributeNode(href);
+  tag.appendChild(text);
   let element = document.getElementById("matches");
   element.appendChild(tag);
 }
