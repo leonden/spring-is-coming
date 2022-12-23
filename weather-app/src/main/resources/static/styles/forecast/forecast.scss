@@ -32,6 +32,10 @@ h1 {
       max-width: 370px;
       width: 100%;
       margin: auto;
+      background: linear-gradient(90deg, #9ccaff 0%, #d4e8ff 50%, #ffffff 100%);
+      padding: 15px 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
       img {
         width: 50px;
       }
