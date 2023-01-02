@@ -1,5 +1,7 @@
 const WEATHER_URL = "/src/main/resources/templates/weather.html";
 
+// -------------------------------------------------------------------
+
 window.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.querySelector(".search");
 
@@ -13,6 +15,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// -------------------------------------------------------------------
 
 function callGeocoder(searchInputValue) {
   const searchInput = document.querySelector(".search");
@@ -54,6 +58,8 @@ function callGeocoder(searchInputValue) {
       }
     });
 }
+
+// -------------------------------------------------------------------
 
 function createMatches(matchText, state, country, latitude, longitude) {
   let url = `${WEATHER_URL}?city=${matchText}&lat=${latitude}&lon=${longitude}`;

@@ -7,6 +7,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
   callTimeZoneDatabase(latitude, longitude);
 });
 
+// -------------------------------------------------------------------
+
 function callTimeZoneDatabase(latitude, longitude) {
   fetch(
     `http://api.timezonedb.com/v2.1/get-time-zone?key=7ZM03JHT7YH5&by=position&lat=${latitude}&lng=${longitude}&format=json`
@@ -23,6 +25,8 @@ function callTimeZoneDatabase(latitude, longitude) {
     });
 }
 
+// -------------------------------------------------------------------
+
 function handleTime(data) {
   // const localDate = data.formatted.substr(0, 10);
   const localTime = data.formatted.substr(11, 18).replaceAll(":", "");
@@ -30,6 +34,8 @@ function handleTime(data) {
 
   setBackground(localTimeFormatted);
 }
+
+// -------------------------------------------------------------------
 
 function setBackground(localTimeFormatted) {
   const appContainer = document.querySelector(".app-container");
