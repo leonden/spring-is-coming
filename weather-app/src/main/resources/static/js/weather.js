@@ -18,6 +18,7 @@ function getParameterValues() {
 
   callOpenweathermap(city, latitude, longitude);
   createLinkToForecast(city, latitude, longitude);
+  createLinkToMaps(city);
 }
 
 // -------------------------------------------------------------------
@@ -50,6 +51,15 @@ function callOpenweathermap(city, latitude, longitude) {
       humidity.innerHTML = data.humidity + "%";
       windSpeed.innerHTML = Math.round(data.wind_speed) + " km/h";
     });
+}
+
+// -------------------------------------------------------------------
+
+function createLinkToMaps(city) {
+  const mapsLink = document.querySelector("#data-location-link");
+  let href = document.createAttribute("href");
+  href.value = `https://www.google.com/maps/place/${city}/`;
+  mapsLink.setAttributeNode(href);
 }
 
 // -------------------------------------------------------------------
