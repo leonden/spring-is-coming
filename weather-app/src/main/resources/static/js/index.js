@@ -40,8 +40,6 @@ function callGeocoder(searchInputValue) {
           );
         });
 
-        console.log(temp);
-
         filteredData.forEach((locationItem) => {
           createMatches(
             locationItem.name,
