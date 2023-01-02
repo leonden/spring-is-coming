@@ -20,6 +20,9 @@
 .main-info .location img {
   width: 60px;
 }
+.main-info .location a:hover {
+  text-decoration: underline;
+}
 .main-info .location a h4 {
   padding-left: 10px;
   font-weight: 400;

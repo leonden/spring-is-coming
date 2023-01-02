@@ -19,6 +19,9 @@
       width: 60px;
     }
     a {
+      &:hover {
+        text-decoration: underline;
+      }
       h4 {
         padding-left: 10px;
         font-weight: 400;

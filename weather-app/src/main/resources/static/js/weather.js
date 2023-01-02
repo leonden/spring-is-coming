@@ -2,7 +2,7 @@ const WEATHER_URL = "/src/main/resources/templates/forecast.html";
 
 // -------------------------------------------------------------------
 
-window.addEventListener("DOMContentLoaded", (e) => {
+window.addEventListener("DOMContentLoaded", () => {
   getParameterValues();
 });
 
