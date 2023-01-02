@@ -12,18 +12,13 @@ function getParameterValues() {
   const latitude = urlParams.get("lat");
   const longitude = urlParams.get("lon");
 
-  callOpenweathermap(latitude, longitude);
+  callOpenweathermap(city, latitude, longitude);
   createLinkToForecast(city, latitude, longitude);
-
-  // urlParams.forEach((parameterValue) => {
-  //   urlParams.get(parameterValue);
-  //   console.log(parameterValue);
-  // });
 }
 
-function callOpenweathermap(latitude, longitude) {
+function callOpenweathermap(city, latitude, longitude) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=1688017c7157a368a1d6a854d3a9ce02`
+    `http://localhost:8080/api/v1/weather/current-weather?latitude=${latitude}&longitude=${longitude}`
   )
     .then((response) => {
       if (response.ok) {
@@ -42,12 +37,12 @@ function callOpenweathermap(latitude, longitude) {
       const windSpeed = document.querySelector("#data-wind-speed");
 
       // set the values of the elements
-      location.innerHTML = data.name;
-      temperature.innerHTML = Math.round(data.main.temp) + "&#176;C";
-      sky.innerHTML = data.weather[0].main;
-      feelsLike.innerHTML = Math.round(data.main.feels_like) + "&#176;C";
-      humidity.innerHTML = data.main.humidity + "%";
-      windSpeed.innerHTML = Math.round(data.wind.speed) + "km/h";
+      location.innerHTML = city;
+      temperature.innerHTML = Math.round(data.temperature) + "&#176;C";
+      sky.innerHTML = data.description;
+      feelsLike.innerHTML = Math.round(data.feels_like) + "&#176;C";
+      humidity.innerHTML = data.humidity + "%";
+      windSpeed.innerHTML = Math.round(data.wind_speed) + " km/h";
     });
 }
 
