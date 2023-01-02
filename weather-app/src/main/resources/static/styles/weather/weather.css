@@ -20,10 +20,11 @@
 .main-info .location img {
   width: 60px;
 }
-.main-info .location h4 {
+.main-info .location a h4 {
   padding-left: 10px;
   font-weight: 400;
   font-size: 2em;
+  cursor: pointer;
 }
 .main-info .weather-info {
   margin-top: 100px;
