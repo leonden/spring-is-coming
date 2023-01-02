@@ -1,8 +1,12 @@
 const WEATHER_URL = "/src/main/resources/templates/forecast.html";
 
+// -------------------------------------------------------------------
+
 window.addEventListener("DOMContentLoaded", (e) => {
   getParameterValues();
 });
+
+// -------------------------------------------------------------------
 
 function getParameterValues() {
   const queryString = window.location.search;
@@ -15,6 +19,8 @@ function getParameterValues() {
   callOpenweathermap(city, latitude, longitude);
   createLinkToForecast(city, latitude, longitude);
 }
+
+// -------------------------------------------------------------------
 
 function callOpenweathermap(city, latitude, longitude) {
   fetch(
@@ -45,6 +51,8 @@ function callOpenweathermap(city, latitude, longitude) {
       windSpeed.innerHTML = Math.round(data.wind_speed) + " km/h";
     });
 }
+
+// -------------------------------------------------------------------
 
 function createLinkToForecast(city, latitude, longitude) {
   const forecastLink = document.querySelector("#btn-forecast");
