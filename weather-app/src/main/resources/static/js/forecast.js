@@ -42,6 +42,29 @@ function callOpenweathermapForecast(city, latitude, longitude) {
 // -------------------------------------------------------------------
 
 function handleDom(city, data) {
+  setTitle(city);
+  appendImages(data);
+  appendText(data);
+}
+
+// -------------------------------------------------------------------
+
+function appendText(data) {
+  const dayOne = document.querySelector("#data-forecast-1");
+  const dayTwo = document.querySelector("#data-forecast-2");
+  const dayThree = document.querySelector("#data-forecast-3");
+  const dayFour = document.querySelector("#data-forecast-4");
+  const dayFive = document.querySelector("#data-forecast-5");
+
+  const forecastDayArray = [dayOne, dayTwo, dayThree, dayFour, dayFive];
+
+  appendTemp(data, forecastDayArray);
+  // appendWeekday(data, forecastDayArray);
+}
+
+// -------------------------------------------------------------------
+
+function appendImages(data) {
   const dayOne = document.querySelector("#data-forecast-img-1");
   const dayTwo = document.querySelector("#data-forecast-img-2");
   const dayThree = document.querySelector("#data-forecast-img-3");
@@ -50,16 +73,37 @@ function handleDom(city, data) {
 
   const forecastDayArray = [dayOne, dayTwo, dayThree, dayFour, dayFive];
 
-  setTitle(city);
-
-  forecastDayArray.forEach((item, i) => {
+  forecastDayArray.forEach((day, i) => {
     let description = data[i].description;
     let assetLink = checkDescription(description);
     let src = document.createAttribute("src");
 
+    console.log(description);
+    console.log(src);
+
     src.value = assetLink;
-    item.setAttributeNode(src);
+    day.setAttributeNode(src);
   });
+}
+
+// -------------------------------------------------------------------
+
+function appendTemp(data, forecastDayArray) {
+  forecastDayArray.forEach((day, i) => {
+    let temperature = data[i].temperature;
+
+    day.innerHTML =
+      appendWeekday(data, i) + " " + Math.round(temperature) + "&#176;C";
+  });
+}
+
+// -------------------------------------------------------------------
+
+function appendWeekday(data, i) {
+  let date = new Date(data[i].date);
+  let weekday = date.toString().slice(0, 3);
+
+  return weekday;
 }
 
 // -------------------------------------------------------------------
@@ -72,6 +116,10 @@ function checkDescription(description) {
       return "../static/assets/clouds.png";
     case "Sun":
       return "../static/assets/sun.png";
+    case "Clear":
+      return "../static/assets/sun.png";
+    case "Mist":
+      return "../static/assets/mist.png";
     case "Snow":
       return "../static/assets/snow.png";
     case "Extreme":
