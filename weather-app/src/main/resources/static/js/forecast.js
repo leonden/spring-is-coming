@@ -59,7 +59,6 @@ function appendText(data) {
   const forecastDayArray = [dayOne, dayTwo, dayThree, dayFour, dayFive];
 
   appendTemp(data, forecastDayArray);
-  // appendWeekday(data, forecastDayArray);
 }
 
 // -------------------------------------------------------------------
