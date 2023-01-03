@@ -1,4 +1,4 @@
-const WEATHER_URL = "/src/main/resources/templates/weather.html";
+const WEATHER_URL = "/weather-app/src/main/resources/templates/weather.html";
 
 // -------------------------------------------------------------------
 
@@ -109,21 +109,23 @@ function appendWeekday(data, i) {
 // -------------------------------------------------------------------
 
 function checkDescription(description) {
+  const basePath = "../static/assets";
+
   switch (description) {
     case "Rain":
-      return "../static/assets/rain.png";
+      return `${basePath}/rain.png`;
     case "Clouds":
-      return "../static/assets/clouds.png";
+      return `${basePath}/clouds.png`;
     case "Sun":
-      return "../static/assets/sun.png";
+      return `${basePath}/sun.png`;
     case "Clear":
-      return "../static/assets/sun.png";
+      return `${basePath}/sun.png`;
     case "Mist":
-      return "../static/assets/mist.png";
+      return `${basePath}/mist.png`;
     case "Snow":
-      return "../static/assets/snow.png";
+      return `${basePath}/snow.png`;
     case "Extreme":
-      return "../static/assets/extreme.png";
+      return `${basePath}/extreme.png`;
   }
 }
 

@@ -1,4 +1,4 @@
-const WEATHER_URL = "/src/main/resources/templates/weather.html";
+const WEATHER_URL = "/weather-app/src/main/resources/templates/weather.html";
 
 // -------------------------------------------------------------------
 
@@ -36,13 +36,7 @@ function callGeocoder(searchInputValue) {
         // data.length === 3
         searchInput.style.borderRadius = "20px 20px 0 0";
 
-        const filteredData = data.filter((location) => {
-          return (
-            location.state !== null &&
-            location.state !== undefined &&
-            location.country !== "NO"
-          );
-        });
+        let filteredData = filterResponse(data);
 
         filteredData.forEach((locationItem) => {
           createMatches(
@@ -57,6 +51,20 @@ function callGeocoder(searchInputValue) {
         searchInput.style.borderRadius = "40px";
       }
     });
+}
+
+// -------------------------------------------------------------------
+
+function filterResponse(data) {
+  const filteredData = data.filter((location) => {
+    return (
+      location.state !== null &&
+      location.state !== undefined &&
+      location.country !== "NO"
+    );
+  });
+
+  return filteredData;
 }
 
 // -------------------------------------------------------------------
