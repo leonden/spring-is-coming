@@ -34,7 +34,6 @@ function callOpenweathermapForecast(city, latitude, longitude) {
       }
     })
     .then((data) => {
-      console.log(data);
       handleDom(city, data);
     });
 }
