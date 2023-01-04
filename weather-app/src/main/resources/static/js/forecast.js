@@ -120,6 +120,8 @@ function checkDescription(description) {
       return `${basePath}/sun.png`;
     case "Mist":
       return `${basePath}/mist.png`;
+    case "Fog":
+      return `${basePath}/mist.png`;
     case "Snow":
       return `${basePath}/snow.png`;
     case "Extreme":
