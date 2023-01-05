@@ -1,7 +1,3 @@
-const WEATHER_URL = "/weather-app/src/main/resources/templates/weather.html";
-
-// -------------------------------------------------------------------
-
 window.addEventListener("DOMContentLoaded", () => {
   getParameterValues();
 });
@@ -107,7 +103,7 @@ function appendWeekday(data, i) {
 // -------------------------------------------------------------------
 
 function checkDescription(description) {
-  const basePath = "../static/assets";
+  const basePath = "/assets";
 
   switch (description) {
     case "Rain":
@@ -141,8 +137,9 @@ function setTitle(city) {
 
 function createLinkToWeather(city, latitude, longitude) {
   const weatherLink = document.querySelector("#btn-weather");
-  let url = `${WEATHER_URL}?city=${city}&lat=${latitude}&lon=${longitude}`;
+  let url = `/weather?city=${city}&lat=${latitude}&lon=${longitude}`;
   let href = document.createAttribute("href");
+
   href.value = url;
   weatherLink.setAttributeNode(href);
 }

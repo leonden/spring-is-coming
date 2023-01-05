@@ -1,7 +1,3 @@
-const WEATHER_URL = "/weather-app/src/main/resources/templates/weather.html";
-
-// -------------------------------------------------------------------
-
 window.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.querySelector(".search");
 
@@ -70,13 +66,16 @@ function filterResponse(data) {
 // -------------------------------------------------------------------
 
 function createMatches(matchText, state, country, latitude, longitude) {
-  let url = `${WEATHER_URL}?city=${matchText}&lat=${latitude}&lon=${longitude}`;
+  let url = `/weather?city=${matchText}&lat=${latitude}&lon=${longitude}`;
   let tag = document.createElement("a");
   let text = document.createTextNode(`${matchText}, ${state} ${country}`);
+
   let href = document.createAttribute("href");
   href.value = url;
   tag.setAttributeNode(href);
   tag.appendChild(text);
+
   let element = document.getElementById("matches");
+
   element.appendChild(tag);
 }

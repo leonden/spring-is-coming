@@ -1,7 +1,3 @@
-const FORECAST_URL = "/weather-app/src/main/resources/templates/forecast.html";
-
-// -------------------------------------------------------------------
-
 window.addEventListener("DOMContentLoaded", () => {
   getParameterValues();
 });
@@ -66,8 +62,9 @@ function createLinkToMaps(city) {
 
 function createLinkToForecast(city, latitude, longitude) {
   const forecastLink = document.querySelector("#btn-forecast");
-  let url = `${FORECAST_URL}?city=${city}&lat=${latitude}&lon=${longitude}`;
+  let url = `/forecast?city=${city}&lat=${latitude}&lon=${longitude}`;
   let href = document.createAttribute("href");
+
   href.value = url;
   forecastLink.setAttributeNode(href);
 }
