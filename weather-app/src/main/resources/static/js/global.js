@@ -66,7 +66,7 @@ function setBackground(localHour) {
     "linear-gradient(0deg, #b9efff 0%, #3dbce3 50%, #0060cd 100%)",
     "linear-gradient(0deg, #ffea82 0%, #ffbd39 50%, #ff7722 100%)",
     "linear-gradient(0deg, #c3beff 0%, #5f80ec 50%, #0c3dae 100%)",
-    "linear-gradient(0deg, #6d4cc1 0%, #341ea7 50%, #1b005f 100%)",
+    "linear-gradient(0deg, #7c67b2 0%, #442bc5 50%, #250672 100%)",
   ];
 
   if (dayTime[0]) {
@@ -86,5 +86,14 @@ function setBackground(localHour) {
   }
   if (dayTime[5] || dayTime[6]) {
     appContainer.style.background = dayTime[12];
+    const location = document.querySelector("#data-location");
+    const temp = document.querySelector("#data-temperature");
+    const desc = document.querySelector("#data-sky");
+
+    const toStyle = [location, temp, desc];
+
+    toStyle.forEach((tag) => {
+      tag.style.color = "white";
+    });
   }
 }
