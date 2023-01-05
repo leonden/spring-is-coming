@@ -72,9 +72,6 @@ function appendImages(data) {
     let assetLink = checkDescription(description);
     let src = document.createAttribute("src");
 
-    console.log(description);
-    console.log(src);
-
     src.value = assetLink;
     day.setAttributeNode(src);
   });
