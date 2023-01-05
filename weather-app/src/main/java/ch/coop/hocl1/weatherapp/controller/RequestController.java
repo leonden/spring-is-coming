@@ -20,5 +20,4 @@ public class RequestController {
     public String weather() {
         return "weather";
     }
-
 }
