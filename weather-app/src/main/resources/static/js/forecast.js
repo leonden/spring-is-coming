@@ -134,7 +134,7 @@ function checkDescription(description) {
 function setTitle(city) {
   const title = document.querySelector("#data-forecast-location");
 
-  title.innerHTML = `The next four days in ${city}`;
+  title.innerHTML = `The next five days in ${city}`;
 }
 
 // -------------------------------------------------------------------
