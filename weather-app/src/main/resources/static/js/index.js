@@ -69,8 +69,8 @@ function createMatches(matchText, state, country, latitude, longitude) {
   let url = `/weather?city=${matchText}&lat=${latitude}&lon=${longitude}`;
   let tag = document.createElement("a");
   let text = document.createTextNode(`${matchText}, ${state} ${country}`);
-
   let href = document.createAttribute("href");
+
   href.value = url;
   tag.setAttributeNode(href);
   tag.appendChild(text);
