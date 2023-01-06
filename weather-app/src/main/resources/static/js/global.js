@@ -87,10 +87,12 @@ function setBackground(localHour) {
     const marker = document.querySelector("#data-marker");
     const title = document.querySelector("#data-forecast-location");
 
-    const toStyle = [location, temp, desc, marker];
+    const toStyle = [location, temp, desc, marker, title];
 
     toStyle.forEach((tag) => {
-      tag.style.filter = "invert(100%)";
+      if (document.body.contains(tag)) {
+        tag.style.filter = "invert(100%)";
+      }
     });
   }
 }
