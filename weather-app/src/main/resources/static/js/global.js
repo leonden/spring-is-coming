@@ -61,6 +61,9 @@ function setBackground(localHour) {
     localHour >= 18 && localHour < 21,
     localHour >= 21 && localHour <= 24,
     localHour >= 0 && localHour < 7,
+  ];
+
+  const dayTimeStyle = [
     "linear-gradient(0deg, #ffe5c1 0%, #ffb64f 50%, #ff7c1f 100%)",
     "linear-gradient(0deg, #eeedff 0%, #aec1ff 50%, #787aff 100%)",
     "linear-gradient(0deg, #b9efff 0%, #3dbce3 50%, #0060cd 100%)",
@@ -69,31 +72,25 @@ function setBackground(localHour) {
     "linear-gradient(0deg, #7c67b2 0%, #442bc5 50%, #250672 100%)",
   ];
 
-  if (dayTime[0]) {
-    appContainer.style.background = dayTime[7];
-  }
-  if (dayTime[1]) {
-    appContainer.style.background = dayTime[8];
-  }
-  if (dayTime[2]) {
-    appContainer.style.background = dayTime[9];
-  }
-  if (dayTime[3]) {
-    appContainer.style.background = dayTime[10];
-  }
-  if (dayTime[4]) {
-    appContainer.style.background = dayTime[11];
-  }
+  dayTime.forEach((hour, i) => {
+    if (hour) {
+      appContainer.style.background = dayTimeStyle[i];
+    }
+  });
+
   if (dayTime[5] || dayTime[6]) {
-    appContainer.style.background = dayTime[12];
+    appContainer.style.background = dayTimeStyle[5];
+
     const location = document.querySelector("#data-location");
     const temp = document.querySelector("#data-temperature");
     const desc = document.querySelector("#data-sky");
+    const marker = document.querySelector("#data-marker");
+    const title = document.querySelector("#data-forecast-location");
 
-    const toStyle = [location, temp, desc];
+    const toStyle = [location, temp, desc, marker];
 
     toStyle.forEach((tag) => {
-      tag.style.color = "white";
+      tag.style.filter = "invert(100%)";
     });
   }
 }
