@@ -55,9 +55,9 @@ function setBackground(localHour) {
   // order: sunrise, morning, lunch, afternoon, evening, night, night
   const dayTime = [
     localHour >= 7 && localHour < 9,
-    localHour >= 9 && localHour < 10,
-    localHour >= 10 && localHour < 14,
-    localHour >= 14 && localHour < 18,
+    localHour >= 9 && localHour < 11,
+    localHour >= 11 && localHour < 15,
+    localHour >= 15 && localHour < 18,
     localHour >= 18 && localHour < 21,
     localHour >= 21 && localHour <= 24,
     localHour >= 0 && localHour < 7,
