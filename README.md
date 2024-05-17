@@ -1,5 +1,5 @@
 <h1><img src="weather-app/src/main/resources/static/assets/weather-light.png" width="50px" style="float:left; margin-right:20px;" />
-Weather App - M322</h1>
+Spring Is Coming - Springboot Weather App</h1>
 
 Final - Release 1.1.4
 
